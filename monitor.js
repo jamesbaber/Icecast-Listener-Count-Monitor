@@ -20,7 +20,7 @@ var interval = 1000 * waitTime;
 console.log("Seconds between logs: " + waitTime);
 
 // Save location
-var saveLoc = "C:\Users\schoolradio\Desktop\listenerLog.csv";
+var saveLoc = "listenerLog.csv";
 
 
 function getDateTime() {
