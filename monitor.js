@@ -14,13 +14,16 @@ fs = require("fs");
 // Introductory text
 console.log("Monitoring the listener count for the schoolradio icecast server");
 
-// Time constants
-var waitTime = 10; // Seconds between logs
+// Icecast server URL
+var serverWebURL = "http://localhost"; // Change me (I'm the address of the Icecast servers WEB control panel)
+
+// Time constant configuration
+var waitTime = 10; // Change me (I'm the time between logs in seconds)
 var interval = 1000 * waitTime;
 console.log("Seconds between logs: " + waitTime);
 
 // Save location
-var saveLoc = "listenerLog.csv";
+var saveLoc = "listenerLog.csv"; // Change me (I'm the directory to put the csv with all the data)
 
 
 function getDateTime() {
@@ -76,7 +79,7 @@ function logData(data) {
 
 setInterval(function() {
 	// Perform an ajax call to the icecast web interface
-	najax("http://localhost", function(html) {
+	najax(serverWebURL, function(html) {
 		html = someText = html.replace(/(\r\n|\n|\r)/gm,"");
 		var listeners = parseData(html, '<td>Current Listeners:</td><td class="streamdata">', "</td></tr>");
 		logData(listeners);
