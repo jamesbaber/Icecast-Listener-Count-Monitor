@@ -1,6 +1,6 @@
 # Icecast Listener Count Monitor
 Simple Icecast listener count monitor written in node.js
-Custom built for Backwell School Radio
+Created by James Baber <contact@jamesbaber.co.uk>
 
 ##FAQ
 
